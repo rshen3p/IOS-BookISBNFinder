@@ -12,6 +12,11 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var myTextField: UITextField!
     @IBOutlet weak var myAmazonLP: UILabel!
+    @IBOutlet weak var Price: UILabel!
+    @IBOutlet weak var myAmazonTitle: UILabel!
+    @IBOutlet weak var BookTitle: UILabel!
+    @IBOutlet weak var Status: UILabel!
+    @IBOutlet weak var myAmazonStatus: UILabel!
     
     func validateISPN() -> Bool{
         if let myISBNText = myTextField.text{
@@ -29,6 +34,7 @@ class ViewController: UIViewController {
         if(validateISPN()){
             getAmazonListPrice()
         }
+        self.myTextField.endEditing(true)
     }
     
     func getAmazonListPrice(){
@@ -39,15 +45,50 @@ class ViewController: UIViewController {
             
             if let myDataCode = myData{
                 let myDataString = NSString(data: myDataCode,encoding: NSUTF8StringEncoding)
-                
                 dispatch_async(dispatch_get_main_queue(),
-                    {self.myAmazonLP.text = self.splitString(myDataString!) as? String})
-            
+                    {
+                        self.Price.text = "Price: "
+                        self.myAmazonLP.text = self.splitString(myDataString!) as? String})
+                dispatch_async(dispatch_get_main_queue(),
+                    {
+                        self.BookTitle.text = "Title: "
+                        self.myAmazonTitle.text = self.splitTitleString(myDataString!) as? String})
+                dispatch_async(dispatch_get_main_queue(),
+                    {
+                        self.Status.text = "Status: "
+                        self.myAmazonStatus.text = self.splitStatusString(myDataString!) as? String})
+                
             }
         }
         
         myTask.resume()
         
+    }
+    
+    func splitStatusString(htmlString:NSString) -> NSString?{
+        let myArray1  = htmlString.componentsSeparatedByString("<span class=\"a-size-medium a-color-success\">")
+        if myArray1.count > 1{
+            let myArray2 = myArray1[1].componentsSeparatedByString("</span>")
+            if myArray2.count > 1{
+                let myBookTitle = myArray2[0].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+                return myBookTitle
+            }
+        }
+        return nil
+    }
+
+    
+    
+    func splitTitleString(htmlString:NSString) -> NSString?{
+        let myArray1  = htmlString.componentsSeparatedByString("<span id=\"productTitle\" class=\"a-size-large\">")
+        if myArray1.count > 1{
+            let myArray2 = myArray1[1].componentsSeparatedByString("</span>")
+            if myArray2.count > 1{
+                let myBookTitle = myArray2[0].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+                return myBookTitle
+            }
+        }
+        return nil
     }
     
     func splitString(htmlString:NSString) -> NSString?{
