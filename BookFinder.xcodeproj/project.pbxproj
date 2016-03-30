@@ -14,6 +14,7 @@
 		EB50535F1CAB9C6D005B2F12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB50535D1CAB9C6D005B2F12 /* LaunchScreen.storyboard */; };
 		EB50536A1CAB9C6D005B2F12 /* BookFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5053691CAB9C6D005B2F12 /* BookFinderTests.swift */; };
 		EB5053751CAB9C6D005B2F12 /* BookFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5053741CAB9C6D005B2F12 /* BookFinderUITests.swift */; };
+		EB5053831CAB9F15005B2F12 /* amazon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB5053821CAB9F15005B2F12 /* amazon.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		EB5053701CAB9C6D005B2F12 /* BookFinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookFinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB5053741CAB9C6D005B2F12 /* BookFinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFinderUITests.swift; sourceTree = "<group>"; };
 		EB5053761CAB9C6D005B2F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB5053821CAB9F15005B2F12 /* amazon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = amazon.jpg; path = ../../../amazon.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				EB5053581CAB9C6D005B2F12 /* Main.storyboard */,
 				EB50535B1CAB9C6D005B2F12 /* Assets.xcassets */,
 				EB50535D1CAB9C6D005B2F12 /* LaunchScreen.storyboard */,
+				EB5053821CAB9F15005B2F12 /* amazon.jpg */,
 				EB5053601CAB9C6D005B2F12 /* Info.plist */,
 			);
 			path = BookFinder;
@@ -233,6 +236,7 @@
 				EB50535F1CAB9C6D005B2F12 /* LaunchScreen.storyboard in Resources */,
 				EB50535C1CAB9C6D005B2F12 /* Assets.xcassets in Resources */,
 				EB50535A1CAB9C6D005B2F12 /* Main.storyboard in Resources */,
+				EB5053831CAB9F15005B2F12 /* amazon.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,10 +405,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BookFinder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.BCIT.COMP4977.BookFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -415,10 +421,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BookFinder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.BCIT.COMP4977.BookFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -489,6 +497,7 @@
 				EB50537B1CAB9C6D005B2F12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB50537C1CAB9C6D005B2F12 /* Build configuration list for PBXNativeTarget "BookFinderTests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +506,7 @@
 				EB50537E1CAB9C6D005B2F12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB50537F1CAB9C6D005B2F12 /* Build configuration list for PBXNativeTarget "BookFinderUITests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +515,7 @@
 				EB5053811CAB9C6D005B2F12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
